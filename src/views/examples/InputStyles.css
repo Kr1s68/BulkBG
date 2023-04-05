@@ -1,0 +1,52 @@
+.regInput {
+  background-color: transparent;
+  border-left: none;
+  border-top: 1px solid #2b3553;
+  border-bottom: 1px solid #2b3553;
+  border-right: 1px solid #2b3553;
+  border-top-right-radius: 0.4285rem;
+  border-bottom-right-radius: 0.4285rem;
+  color: #adb5bd;
+  outline: none;
+  width: 20rem;
+}
+.regInput:focus {
+  border-color: #1d8cf8;
+}
+.pickerDiv {
+  margin-block: 10px;
+}
+.Calculator {
+  margin-top: 50px;
+}
+.meal-items-div {
+  overflow-y: scroll;
+  overflow-x: hidden;
+  max-height: 450px;
+  padding-inline: 10px;
+}
+
+.meal-items-div::-webkit-scrollbar {
+  width: 10px;
+  transition: all 0.3s;
+}
+
+.meal-items-div::-webkit-scrollbar-track {
+  background: transparent;
+  border-radius: 10px;
+}
+
+.meal-items-div::-webkit-scrollbar-thumb {
+  background: #21262d;
+  border-radius: 10px;
+}
+
+.meal-items-div::-webkit-scrollbar-thumb:hover {
+  background: rgb(100, 100, 100);
+  border-radius: 10px;
+}
+
+.meal-items-div::-webkit-scrollbar-thumb:active {
+  background: rgb(68, 68, 68);
+  border-radius: 10px;
+}
