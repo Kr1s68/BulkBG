@@ -38,9 +38,12 @@ import {
   doc,
   getDocs,
   collection,
+  setDoc,
+  addDoc,
   query,
   where,
   deleteDoc,
+  FieldPath,
 } from "firebase/firestore";
 import { firestore } from "../../firebase";
 import { useAuth } from "contexts/AuthContext";
@@ -51,7 +54,7 @@ import Footer from "components/Footer/Footer.js";
 
 import bigChartData from "variables/charts.js";
 import IndexNavbar from "components/Navbars/IndexNavbar";
-import { Toaster } from "react-hot-toast";
+import { Toaster, toast } from "react-hot-toast";
 
 export default function Cart() {
   const { currentUser } = useAuth();
@@ -84,6 +87,14 @@ export default function Cart() {
     setItems([]);
     loadCartData();
   }
+  async function finishOrder() {
+    toast.success("Order Placed");
+    currentUser ? console.log("ok") : console.log("not ok");
+    const docRef = await setDoc(doc(firestore, "Orders", currentUser.email), {
+      items: items,
+    });
+    console.log("Document written with ID: ", docRef.id);
+  }
   useEffect(() => {
     loadCartData();
   }, [currentUser]);
@@ -112,6 +123,7 @@ export default function Cart() {
               color="primary"
               size="lg"
               style={{ marginTop: "20px", marginBottom: "40px" }}
+              onClick={finishOrder}
             >
               Завърши поръчката
             </Button>

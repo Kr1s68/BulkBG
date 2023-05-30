@@ -34,6 +34,7 @@ import Cart from "views/mainviews/Cart";
 import { CartProvider } from "contexts/CartContext";
 import { AuthProvider } from "contexts/AuthContext";
 import Calculator from "views/mainviews/Calculator";
+import Orders from "views/mainviews/Orders";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
@@ -49,6 +50,7 @@ root.render(
           />
           <Route path="/store" render={(props) => <Store {...props} />} />
           <Route path="/cart" render={(props) => <Cart {...props} />} />
+          <Route path="/orders" render={(props) => <Orders {...props} />} />
           <Route path="/contact" render={(props) => <Contact {...props} />} />
           <Route
             path="/calculator"

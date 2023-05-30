@@ -96,6 +96,7 @@ export default function ProfilePage() {
     );
     toast.success("Item added");
     console.log("Document written with ID: ", docRef.id);
+    window.location.reload();
   }
   async function loadMealData() {
     const Snapshot = await getDocs(
@@ -431,7 +432,6 @@ export default function ProfilePage() {
                         onClick={() => {
                           setDisplayable(true);
                           addItem();
-                          reloadData();
                         }}
                       >
                         <i className="tim-icons icon-plus" /> Завърши
@@ -441,7 +441,7 @@ export default function ProfilePage() {
                 )}
               </Col>
               <Col md="5">
-                <h1 className="profile-title text-left">Храненя</h1>
+                <h1 className="profile-title text-left">Хранения</h1>
                 <h5 className="text-on-back">02</h5>
 
                 <div className="btn-wrapper pt-3">

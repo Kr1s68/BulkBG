@@ -43,7 +43,6 @@ export default function IndexNavbar() {
   const { currentUser, logout } = useAuth();
   const [error, setError] = useState();
   const history = useHistory();
-
   async function handleLogout() {
     setError("");
 
@@ -103,6 +102,11 @@ export default function IndexNavbar() {
           <NavLink href="/calculator" style={{ cursor: "pointer" }}>
             Calculator
           </NavLink>
+          {currentUser && currentUser.isAdmin && (
+            <NavLink href="/orders" style={{ cursor: "pointer" }}>
+              Orders
+            </NavLink>
+          )}
         </Row>
       </Container>
     </Navbar>
