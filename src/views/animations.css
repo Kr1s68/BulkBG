@@ -1,0 +1,81 @@
+.bikeImage {
+  cursor: pointer;
+  transition: margin-left 0.5s;
+}
+
+.bikeImage:hover {
+  margin-left: 60%;
+}
+
+.buttonText {
+  color: rgba(0, 0, 0, 0);
+  transition: color 0.5s;
+}
+
+.bikeImage:hover .buttonText {
+  color: rgba(0, 0, 0, 1) !important;
+}
+
+.homePageBikeImgSecond {
+  width: 100%;
+  margin-bottom: 5%;
+}
+
+.homePageBikeImgSecond img {
+  margin-left: 360px;
+  border-radius: 20px;
+}
+
+.homePageBikeImgSecond .cover {
+  background-color: rgb(242, 248, 255);
+  height: 830px;
+  margin-bottom: -830px;
+  margin-left: -32%;
+  width: 62%;
+  z-index: 1000 !important;
+  border-radius: 20px;
+  padding-inline: 5%;
+  padding-block: 10%;
+}
+
+.cover p {
+  font-size: 20px;
+  text-align: center;
+  margin-top: 20%;
+}
+
+.homePageBikeImgFirst {
+  width: 100%;
+  margin-bottom: 5%;
+}
+
+.homePageBikeImgFirst img {
+  margin-left: -360px;
+  border-radius: 20px;
+}
+
+.homePageBikeImgFirst .cover {
+  background-color: rgb(242, 248, 255);
+  height: 830px;
+  margin-top: -830px;
+  margin-left: 70%;
+  width: 62%;
+  z-index: 1000 !important;
+  border-radius: 20px;
+  padding-inline: 5%;
+  padding-block: 10%;
+}
+
+.cover p {
+  font-size: 20px;
+  text-align: center;
+  margin-top: 20%;
+}
+
+@keyframes translateLeft {
+  0% {
+  }
+  100% {
+    margin-left: 60%;
+  }
+}

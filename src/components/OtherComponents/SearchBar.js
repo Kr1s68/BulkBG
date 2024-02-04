@@ -4,9 +4,9 @@ const SearchBar = ({ keyword, setKeyword, setIsSearched }) => {
   const BarStyling = {
     width: "40rem",
     background: "transparent",
-    color: "white",
+    color: "black",
     borderStyle: "solid",
-    borderColor: "white",
+    borderColor: "black",
     borderWidth: "0.5px",
     borderRadius: "10px",
     padding: "0.5rem",

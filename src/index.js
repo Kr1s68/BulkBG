@@ -35,42 +35,101 @@ import { CartProvider } from "contexts/CartContext";
 import { AuthProvider } from "contexts/AuthContext";
 import Calculator from "views/mainviews/Calculator";
 import Orders from "views/mainviews/Orders";
+import { doc, getDocs, collection, query, where } from "firebase/firestore";
+import { firestore } from "./firebase";
+import BikeView from "views/mainviews/BikeView";
+
+async function loadMountainBikes() {
+  const MProteinsSnapshot = await getDocs(
+    collection(firestore, "MountainBikes")
+  );
+  const arr = MProteinsSnapshot.docs.map((doc) => doc.id);
+  return arr;
+}
+
+async function loadRoadBikes() {
+  const MProteinsSnapshot = await getDocs(collection(firestore, "RoadBikes"));
+  const arr = MProteinsSnapshot.docs.map((doc) => doc.id);
+  return arr;
+}
+
+async function loadDirtBikes() {
+  const MProteinsSnapshot = await getDocs(collection(firestore, "DirtBikes"));
+  const arr = MProteinsSnapshot.docs.map((doc) => doc.id);
+  return arr;
+}
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
-root.render(
-  <AuthProvider>
-    <CartProvider>
-      <BrowserRouter>
-        <Switch>
-          <Route path="/home" render={(props) => <Index {...props} />} />
-          <Route
-            path="/landing-page"
-            render={(props) => <LandingPage {...props} />}
-          />
-          <Route path="/store" render={(props) => <Store {...props} />} />
-          <Route path="/cart" render={(props) => <Cart {...props} />} />
-          <Route path="/orders" render={(props) => <Orders {...props} />} />
-          <Route path="/contact" render={(props) => <Contact {...props} />} />
-          <Route
-            path="/calculator"
-            render={(props) => <Calculator {...props} />}
-          />
-          <Route
-            path="/register-page"
-            render={(props) => <RegisterPage {...props} />}
-          />
-          <Route
-            path="/login-page"
-            render={(props) => <LoginPage {...props} />}
-          />
-          <Route
-            path="/profile-page"
-            render={(props) => <ProfilePage {...props} />}
-          />
-          <Redirect from="/" to="/home" />
-        </Switch>
-      </BrowserRouter>
-    </CartProvider>
-  </AuthProvider>
-);
+async function fetchData() {
+  const mountainBikeRouteArray = await loadMountainBikes();
+  const RoadBikeRouteArray = await loadRoadBikes();
+  const DirtBikeRouteArray = await loadDirtBikes();
+  console.log(mountainBikeRouteArray);
+  root.render(
+    <AuthProvider>
+      <CartProvider>
+        <BrowserRouter>
+          <Switch>
+            {mountainBikeRouteArray.map((route, index) => (
+              <Route
+                key={index}
+                path={`/MountainBike${route}`}
+                render={(props) => (
+                  <BikeView {...props} id={route} type={"MountainBikes"} />
+                )}
+              />
+            ))}
+            {RoadBikeRouteArray.map((route, index) => (
+              <Route
+                key={index}
+                path={`/RoadBike${route}`}
+                render={(props) => (
+                  <BikeView {...props} id={route} type={"RoadBikes"} />
+                )}
+              />
+            ))}
+            {DirtBikeRouteArray.map((route, index) => (
+              <Route
+                key={index}
+                path={`/DirtBike${route}`}
+                render={(props) => (
+                  <BikeView {...props} id={route} type={"DirtBikes"} />
+                )}
+              />
+            ))}
+            <Route path="/home" render={(props) => <Index {...props} />} />
+            <Route
+              path="/landing-page"
+              render={(props) => <LandingPage {...props} />}
+            />
+            <Route path="/store" render={(props) => <Store {...props} />} />
+            <Route path="/cart" render={(props) => <Cart {...props} />} />
+            <Route path="/orders" render={(props) => <Orders {...props} />} />
+            <Route path="/contact" render={(props) => <Contact {...props} />} />
+            <Route
+              path="/calculator"
+              render={(props) => <Calculator {...props} />}
+            />
+            <Route
+              path="/register-page"
+              render={(props) => <RegisterPage {...props} />}
+            />
+            <Route
+              path="/login-page"
+              render={(props) => <LoginPage {...props} />}
+            />
+            <Route
+              path="/profile-page"
+              render={(props) => <ProfilePage {...props} />}
+            />
+
+            <Redirect from="/" to="/home" />
+          </Switch>
+        </BrowserRouter>
+      </CartProvider>
+    </AuthProvider>
+  );
+}
+
+fetchData().then(console.log("data fetched"));

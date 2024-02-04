@@ -18,6 +18,7 @@
 import { useAuth } from "contexts/AuthContext";
 import React, { useState } from "react";
 import { Link, useHistory } from "react-router-dom";
+import "./NavBars.css";
 // reactstrap components
 import {
   Button,
@@ -62,9 +63,19 @@ export default function IndexNavbar() {
       expand="lg"
     >
       <Container>
-        <a style={{ fontSize: "20px", color: "white" }} href={"/home"}>
+        <a
+          style={{ fontSize: "20px", color: "black", fontWeight: "bold" }}
+          href={"/home"}
+          className="mainLink"
+        >
           {" "}
-          BLK•BG{" "}
+          <span>B</span>
+          <span>I</span>
+          <span>K</span>
+          <span>E</span>
+          <span>🌲</span>
+          <span>B</span>
+          <span>G</span>{" "}
         </a>
         <Row>
           <NavLink href="/store" style={{ cursor: "pointer" }}>
@@ -98,9 +109,6 @@ export default function IndexNavbar() {
 
           <NavLink href="/cart" style={{ cursor: "pointer" }}>
             Cart
-          </NavLink>
-          <NavLink href="/calculator" style={{ cursor: "pointer" }}>
-            Calculator
           </NavLink>
           {currentUser && currentUser.isAdmin && (
             <NavLink href="/orders" style={{ cursor: "pointer" }}>

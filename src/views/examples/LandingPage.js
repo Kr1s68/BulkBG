@@ -89,7 +89,7 @@ export default function LandingPage() {
             <Row className="row-grid justify-content-between align-items-center text-left">
               <Col lg="6" md="6">
                 <h1 className="text-white">
-                  BLK•BG <br />
+                  BIKE•BG <br />
                 </h1>
                 <p className="text-white mb-3" style={{ fontSize: "18px" }}>
                   Добре дошли в BULK BG, вашият източник на естествени и
@@ -128,50 +128,7 @@ export default function LandingPage() {
               <Col lg="12">
                 <h1 className="text-center">Вашата най-добра полза</h1>
                 <Row className="row-grid justify-content-center">
-                  <Col lg="3">
-                    <div className="info">
-                      <div className="icon icon-primary">
-                        <i className="tim-icons icon-money-coins" />
-                      </div>
-                      <h4 className="info-title">Защо протеин?</h4>
-                      <hr className="line-primary" />
-                      <p>
-                        Протеиновите добавки поддържат здрави мускули, кости и
-                        имунна функция и могат да помогнат за предотвратяване на
-                        преяждането. Изборът на висококачествени добавки е важен
-                        за оптималното здраве.
-                      </p>
-                    </div>
-                  </Col>
-                  <Col lg="3">
-                    <div className="info">
-                      <div className="icon icon-warning">
-                        <i className="tim-icons icon-chart-pie-36" />
-                      </div>
-                      <h4 className="info-title">Защо креатин?</h4>
-                      <hr className="line-warning" />
-                      <p>
-                        Добавките с креатин могат да увеличат силата и размера
-                        на мускулите, да подобрят ефективността на упражненията
-                        и да осигурят други ползи за здравето.
-                      </p>
-                    </div>
-                  </Col>
-                  <Col lg="3">
-                    <div className="info">
-                      <div className="icon icon-success">
-                        <i className="tim-icons icon-single-02" />
-                      </div>
-                      <h4 className="info-title">Защо хранителни добавки?</h4>
-                      <hr className="line-success" />
-                      <p>
-                        Хранителните добавки могат да осигурят основни
-                        хранителни вещества, които може да липсват в диетата ви,
-                        което може да подпомогне цялостното здраве и
-                        здравословно състояние.
-                      </p>
-                    </div>
-                  </Col>
+                  <Col lg="3"></Col>
                 </Row>
               </Col>
             </Row>

@@ -166,7 +166,7 @@ export default function ProfilePage() {
           <Container className="align-items-center">
             <Row>
               <Col lg="6" md="6">
-                <h1 className="profile-title text-left">
+                <h1 className="profile-title text-left text-dark">
                   {currentUser ? currentUser.displayName : "John Doe"}
                 </h1>
                 <h5 className="text-on-back">01</h5>
@@ -384,92 +384,16 @@ export default function ProfilePage() {
             </Row>
           </Container>
         </div>
-        <div className="section">
-          <Container>
-            <Row className="justify-content-between">
-              <Col md="6">
-                {displayable ? (
-                  <Row className="justify-content-between align-items-center meal-items-div">
-                    {" "}
-                    {mealItems.map((item) => (
-                      <MealItem key={item.id} item={item} />
-                    ))}
-                  </Row>
-                ) : (
-                  <Col>
-                    <Row style={{ marginBlock: "5px" }}>
-                      <Label>Закуска: </Label>
-                      <Input
-                        type="number"
-                        placeholder="Калории.."
-                        value={breakfast}
-                        onChange={(e) => setBreakfast(e.target.value)}
-                      ></Input>
-                    </Row>
-                    <Row style={{ marginBlock: "5px" }}>
-                      <Label>Обяд: </Label>
-                      <Input
-                        type="number"
-                        placeholder="Калории.."
-                        value={lunch}
-                        onChange={(e) => setLunch(e.target.value)}
-                      ></Input>
-                    </Row>
-                    <Row style={{ marginBlock: "5px" }}>
-                      <Label>Вечеря: </Label>
-                      <Input
-                        type="number"
-                        placeholder="Калории.."
-                        value={dinner}
-                        onChange={(e) => setDinner(e.target.value)}
-                      ></Input>
-                    </Row>
-                    <Row>
-                      <Button
-                        className="btn-simple"
-                        color="secondary"
-                        href="#pablo"
-                        onClick={() => {
-                          setDisplayable(true);
-                          addItem();
-                        }}
-                      >
-                        <i className="tim-icons icon-plus" /> Завърши
-                      </Button>
-                    </Row>
-                  </Col>
-                )}
-              </Col>
-              <Col md="5">
-                <h1 className="profile-title text-left">Хранения</h1>
-                <h5 className="text-on-back">02</h5>
-
-                <div className="btn-wrapper pt-3">
-                  <Button
-                    className="btn-simple"
-                    color="primary"
-                    href="#pablo"
-                    onClick={() =>
-                      displayable ? setDisplayable(false) : setDisplayable(true)
-                    }
-                  >
-                    <i className="tim-icons icon-plus" /> Добави хранене
-                  </Button>
-                </div>
-              </Col>
-            </Row>
-          </Container>
-        </div>
         <section className="section">
           <Container>
             <Row>
               <Col md="6">
                 <Card className="card-plain">
                   <CardHeader>
-                    <h1 className="profile-title text-left">
+                    <h1 className="profile-title text-left text-dark">
                       Свържете се с нас
                     </h1>
-                    <h5 className="text-on-back">03</h5>
+                    <h5 className="text-on-back">02</h5>
                   </CardHeader>
                   <CardBody>
                     <Form>

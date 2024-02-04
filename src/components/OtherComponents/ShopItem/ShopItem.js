@@ -4,9 +4,19 @@ import { doc, setDoc, addDoc, collection } from "firebase/firestore";
 import { firestore } from "../../../firebase";
 import { useAuth } from "contexts/AuthContext";
 import { toast } from "react-hot-toast";
+import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 
-const ShopItem = ({ item, searchQuery, isSearched }) => {
+const ShopItem = ({
+  item,
+  searchQuery,
+  isSearched,
+  id,
+  type,
+  size,
+  currentSize,
+}) => {
   const { currentUser } = useAuth();
+  const navigate = useHistory();
 
   async function addItem() {
     currentUser
@@ -27,10 +37,13 @@ const ShopItem = ({ item, searchQuery, isSearched }) => {
       className="shop-item"
       style={{
         display:
-          !isSearched || item.name.includes(searchQuery)
+          !isSearched ||
+          item.name.includes(searchQuery) ||
+          currentSize.includes(size)
             ? "inline-block"
             : "none",
       }}
+      onClick={() => navigate.push(`/${type}${id}`)}
     >
       <div className="shop-item-image-container">
         <img className="shop-item-image" src={item.image} alt={item.name} />

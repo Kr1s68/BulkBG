@@ -36,6 +36,7 @@ import {
 // core components
 import IndexNavbar from "components/Navbars/IndexNavbar.js";
 import Footer from "components/Footer/Footer.js";
+import "./animations.css";
 
 import bigChartData from "variables/charts.js";
 import { useHistory } from "react-router-dom";
@@ -88,17 +89,23 @@ export default function LandingPage() {
           <div className="content-center">
             <Row className="row-grid justify-content-between align-items-center text-left">
               <Col lg="6" md="6">
-                <h1 className="text-white">
-                  BLK•BG <br />
+                <h1 className="text-dark" style={{ fontWeight: "bold" }}>
+                  BIKE🌲BG <br />
                 </h1>
-                <p className="text-white mb-3" style={{ fontSize: "18px" }}>
-                  Добре дошли в Bulk BG, вашият източник на естествени и
-                  ефективни хранителни добавки. Нашите внимателно разработени
-                  хранителни добавки са предназначени да поддържат цялостното ви
-                  здраве и благоразположение. Разгледайте нашия уебсайт, за да
-                  научите повече за нашите продукти и за ангажимента ни за
-                  качество и устойчивост. Заедно нека направим крачка към
-                  по-здравословен живот.
+                <p
+                  className="mb-3"
+                  style={{ fontSize: "18px", color: "black" }}
+                >
+                  Добре дошли в BIKE BG, вашата крайна дестинация за всичко,
+                  свързано с колоезденето! Независимо дали сте опитен колоездач,
+                  или тепърва започвате, ние сме ви осигурили широка гама от
+                  велосипеди, аксесоари и екипировка, които да отговарят на
+                  нуждите на всеки колоездач. От елегантни шосейни велосипеди до
+                  здрави планински велосипеди, от удобни градски кросоувъри до
+                  високопроизводителни хибриди - ние имаме идеалното колело за
+                  вас. Разгледайте колекцията ни от най-добрите марки, опознайте
+                  най-новите тенденции и се подгответе за следващото си
+                  приключение на две колела с BIKE BG. Успешно каране!
                 </p>
                 <div className="btn-wrapper mb-3">
                   <p className="category text-success d-inline">Към магазина</p>
@@ -114,70 +121,182 @@ export default function LandingPage() {
                 </div>
               </Col>
               <Col lg="4" md="5">
-                <img
-                  src="https://img.icons8.com/nolan/1024/heart-with-pulse.png"
-                  alt="kur"
-                />
+                <div
+                  style={{
+                    display: "flex",
+                    flexDirection: "row",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    width: "100%",
+                  }}
+                  className="bikeImage"
+                  onClick={() => navigate.push("/store")}
+                >
+                  <h2
+                    style={{
+                      width: "100%",
+                      marginRight: "20%",
+                    }}
+                    className="buttonText"
+                  >
+                    To Bikes >
+                  </h2>
+                  <img
+                    width="420"
+                    height="180"
+                    src="https://img.icons8.com/external-photo3ideastudio-gradient-photo3ideastudio/1024/external-bike-public-service-photo3ideastudio-gradient-photo3ideastudio.png"
+                    alt="external-bike-public-service-photo3ideastudio-gradient-photo3ideastudio"
+                  />
+                </div>
               </Col>
             </Row>
           </div>
         </div>
+        <Container>
+          <h1
+            className="text-center"
+            style={{ color: "black", marginBottom: "200px" }}
+          >
+            Нашите Препоръки
+          </h1>
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "row",
+              alignItems: "center",
+            }}
+          >
+            <div className="homePageBikeImgSecond">
+              <div className="cover">
+                <h2 className="text-center" style={{ color: "black" }}>
+                  Тrek Marlin 6 Gen 2
+                </h2>
+                <p style={{ color: "black" }}>
+                  Marlin 6 е планински велосипед за крос-кънтри, създаден за
+                  ефективно офроуд каране с вилка с окачване, която се заключва,
+                  и проста задвижваща система 1x. Създаден е за планинско
+                  колоездене, но е оборудван и с функции като стойки за багажник
+                  и стойка за ритник, които го правят чудесен избор за
+                  приключенски ежедневни пътувания.
+                </p>
+                <h2
+                  className="text-center"
+                  style={{ color: "black", marginTop: "210px" }}
+                >
+                  1199лв
+                </h2>
+                <Button
+                  className="btn-round"
+                  color="primary"
+                  size="lg"
+                  style={{ marginLeft: "30%" }}
+                  onClick={() => navigate.push("/MountainBike3")}
+                >
+                  Към Велосипеда
+                </Button>
+              </div>
+              <img
+                src="https://img001.prntscr.com/file/img001/FVPGvtnrTvasGld_8J1T1g.png"
+                alt="kur"
+              ></img>
+            </div>
+          </div>
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "row",
+              alignItems: "center",
+            }}
+          >
+            <div className="homePageBikeImgFirst">
+              <img
+                src="https://media.trekbikes.com/image/upload/f_auto,fl_progressive:semi,q_auto,w_1920,h_1440,c_pad/DomaneAL4-24-41607-C-Portrait"
+                alt="kur"
+              ></img>
+              <div className="cover">
+                <h2 className="text-center" style={{ color: "black" }}>
+                  Domane AL 4 Gen 4
+                </h2>
+                <p style={{ color: "black" }}>
+                  Domane AL 4 е бърз и универсален шосеен велосипед, който е
+                  идеална отправна точка за всеки, който иска да започне да кара
+                  шосеен велосипед. С рамка Alpha Aluminum, просвет за по-големи
+                  гуми, 10-скоростна трансмисия Shimano Tiagra, монтиране на
+                  горната тръба и удобна геометрия за цял ден - Domane AL 4 е
+                  идеален за обикновено въртене на педалите, групови карания,
+                  бързи пътувания и дори за излизане извън асфалтираните пътеки
+                  до повечето чакълени пътища.
+                </p>
+                <h2
+                  className="text-center"
+                  style={{ color: "black", marginTop: "150px" }}
+                >
+                  3199лв
+                </h2>
+                <Button
+                  className="btn-round"
+                  color="primary"
+                  size="lg"
+                  style={{ marginLeft: "30%" }}
+                  onClick={() => navigate.push("/RoadBike2")}
+                >
+                  Към Велосипеда
+                </Button>
+              </div>
+            </div>
+          </div>
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "row",
+              alignItems: "center",
+            }}
+          >
+            <div className="homePageBikeImgSecond">
+              <div className="cover">
+                <h2 className="text-center" style={{ color: "black" }}>
+                  FX 1 Disc
+                </h2>
+                <p style={{ color: "black" }}>
+                  FX 1 Disc е лек алуминиев хибриден велосипед, който изглежда
+                  страхотно и се кара също толкова добре. Той има много
+                  предавки, за да можете да се движите удобно по всеки терен, а
+                  мощните дискови спирачки ви осигуряват уверена спирачна сила,
+                  независимо дали вали или грее. Той е идеален за всеки, който
+                  иска да излиза повече навън, да прави малко упражнения или да
+                  се придвижва до работа с универсален велосипед с доживотна
+                  гаранция.
+                </p>
+                <h2
+                  className="text-center"
+                  style={{ color: "black", marginTop: "170px" }}
+                >
+                  999лв
+                </h2>
+                <Button
+                  className="btn-round"
+                  color="primary"
+                  size="lg"
+                  style={{ marginLeft: "30%" }}
+                  onClick={() => navigate.push("/DirtBike2")}
+                >
+                  Към Велосипеда
+                </Button>
+              </div>
+              <img
+                src="https://media.trekbikes.com/image/upload/f_auto,fl_progressive:semi,q_auto,w_1920,h_1440,c_pad/FX1Disc_22_35001_B_Portrait"
+                alt="kur"
+              ></img>
+            </div>
+          </div>
+        </Container>
+
         <section className="section section-lg">
           <Container>
             <Row className="justify-content-center">
               <Col lg="12">
-                <h1 className="text-center">Вашата най-добра полза</h1>
                 <Row className="row-grid justify-content-center">
-                  <Col lg="3">
-                    <div className="info">
-                      <img
-                        src="https://img.icons8.com/external-ddara-lineal-ddara/64/e14eca/external-protein-health-ddara-lineal-ddara.png"
-                        alt="kur"
-                        style={{ height: "50px" }}
-                      />
-                      <h4 className="info-title">Защо протеин?</h4>
-                      <hr className="line-primary" />
-                      <p>
-                        Протеиновите добавки поддържат здрави мускули, кости и
-                        имунна функция и могат да помогнат за предотвратяване на
-                        преяждането. Изборът на висококачествени добавки е важен
-                        за оптималното здраве.
-                      </p>
-                    </div>
-                  </Col>
-                  <Col lg="3">
-                    <div className="info">
-                      <img
-                        src="https://img.icons8.com/external-xnimrodx-lineal-xnimrodx/64/ff8d72/external-protein-fitness-and-diet-xnimrodx-lineal-xnimrodx.png"
-                        alt="kur"
-                        style={{ height: "50px" }}
-                      />
-                      <h4 className="info-title">Защо креатин?</h4>
-                      <hr className="line-warning" />
-                      <p>
-                        Добавките с креатин могат да увеличат силата и размера
-                        на мускулите, да подобрят ефективността на упражненията
-                        и да осигурят други ползи за здравето.
-                      </p>
-                    </div>
-                  </Col>
-                  <Col lg="3">
-                    <div className="info">
-                      <img
-                        src="https://img.icons8.com/external-out-line-pongsakorn-tan/64/00f2c3/external-biceps-health-out-line-pongsakorn-tan.png"
-                        alt="kur"
-                        style={{ height: "50px" }}
-                      />
-                      <h4 className="info-title">Защо хранителни добавки?</h4>
-                      <hr className="line-success" />
-                      <p>
-                        Хранителните добавки могат да осигурят основни
-                        хранителни вещества, които може да липсват в диетата ви,
-                        което може да подпомогне цялостното здраве и
-                        здравословно състояние.
-                      </p>
-                    </div>
-                  </Col>
+                  <Col lg="3"></Col>
                 </Row>
               </Col>
             </Row>
